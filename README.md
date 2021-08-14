@@ -18,7 +18,7 @@ sudo dpkg -i fanControl_1.0-2_all.deb
 安装完成后程序立即在后台运行，可以使用 `systemctl status fan-control` 查看状态  
 卸载命令
 ```shell
-dpkg -r fan-control
+sudo dpkg -r fan-control
 ```
 
 ## 配置
