@@ -11,7 +11,7 @@
 
 ## 安装
 ```shell
-wget https://github.com/yanxiangrong/Fan-Control/releases/download/1.0/fanControl_1.0-2_all.deb -0 fanControl_1.0-2_all.deb
+wget https://github.com/yanxiangrong/Fan-Control/releases/download/1.0/fanControl_1.0-2_all.deb -o fanControl_1.0-2_all.deb
 sudo dpkg -i fanControl_1.0-2_all.deb
 ```
 安装后会创建一个名为 `fan-control.service` 的服务。并且设置为开机自启。  
