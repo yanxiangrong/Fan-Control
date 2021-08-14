@@ -1,0 +1,8 @@
+DataLine.lo: src/DataLine.cpp /usr/include/stdc-predef.h src/DataLine.h \
+ src/AbstractData.h
+
+/usr/include/stdc-predef.h:
+
+src/DataLine.h:
+
+src/AbstractData.h:

@@ -1,0 +1,8 @@
+Package: fan-control
+Version: 1.0
+Architecture: all
+Maintainer: Xiaorong
+Section: utils
+Priority: standard
+Multi-Arch: foreign
+Description: Automatic fan control for orange pi

@@ -1,0 +1,12 @@
+[Unit]
+Description=Automatic fan control for orange pi
+
+[Service]
+Type=simple
+User=root
+Restart=always
+RestartSec=5s
+ExecStart=/usr/bin/fanControl
+
+[Install]
+WantedBy=sysinit.target

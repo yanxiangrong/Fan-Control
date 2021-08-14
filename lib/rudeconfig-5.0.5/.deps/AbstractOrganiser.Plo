@@ -1,0 +1,6 @@
+AbstractOrganiser.lo: src/AbstractOrganiser.cpp \
+ /usr/include/stdc-predef.h src/AbstractOrganiser.h
+
+/usr/include/stdc-predef.h:
+
+src/AbstractOrganiser.h:
