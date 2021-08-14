@@ -85,24 +85,24 @@ PWM控制功能需要系统支持硬PWM，若要使用软PWM，请看 高级配�
 在`main.cpp`文件中有如下几行宏定义
 ```c++
 #define FANON LOW       # 使用低电平开启风扇
-#define FANOFF HIGH     # 使用高电平开启风扇
+#define FANOFF HIGH     # 使用高电平关闭风扇
 #define PWM_REVERSE     # 反转PWM电平
 //#define USE_SOFT_PWM  # 使用软PWM
 ```
 `LOW` 表示低电平，`HIGH`表示高电平，作相应修改即可。  
-若要更改PWM控制电平，注释宏定义`PWM_REVERSE`即可。  
+若要更改PWM控制电平，注释或取消注释宏定义`PWM_REVERSE`即可。  
 
 ### 使用软件PWM
 
 若要使用软件PWM，取消注释`USE_SOFT_PWM`。  
-本人在 OrangePi Zero 上实测软PWM需要消耗大约0.6%的CPU使用量。因此不建议使用软PWM。
+本人在 OrangePi Zero 上实测软PWM需要消耗大约0.6%的CPU使用量，因此不建议使用软PWM。
 
 ## 开发
 
 取消注释宏定义`#define DEBUG`可以打开调试模式。  
 在调试模式下，程序会打印每次检测的CPU温度，并且打印操作日志。
 
-`rudeconfig`库用来读取和解析配置文件。使用前需要编译安装，详情请参考 [lib/rudeconfig-5.0.5/INSTALL](./lib/rudeconfig-5.0.5/INSTALL)
+`rudeconfig`库用来读取和解析配置文件。使用前需要编译安装，详情请参考 [lib/rudeconfig-5.0.5/INSTALL](./lib/rudeconfig-5.0.5/INSTALL)  
 `wiringOP`是香橙派GPIO库文件。使用前需要编译安装，详情请参考 [lib/wiringOP/INSTALL](./lib/wiringOP/INSTALL)
 
 ### 一些有用的命令
@@ -111,11 +111,11 @@ PWM控制功能需要系统支持硬PWM，若要使用软PWM，请看 高级配�
 ```shell
 systemctl daemon-reload
 ```
-手动开启风扇控制服务
+开启风扇控制服务
 ```shell
 systemctl start fan-control
 ```
-手动停止服务
+停止服务
 ```shell
 systemctl stop fan-control
 ```
