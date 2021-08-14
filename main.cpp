@@ -291,7 +291,7 @@ void rebootController(int cpuTemp) {
     if (not globalConfig.rebootConfig.isEnable) {
         return;
     }
-    if (cpuTemp >= globalConfig.rebootConfig.rebootTemp) {
+    if (cpuTemp > globalConfig.rebootConfig.rebootTemp) {
 #ifdef DEBUG
         printf("Reboot\n");
 #endif
@@ -303,7 +303,7 @@ void shutdownController(int cpuTemp) {
     if (not globalConfig.shutdownConfig.isEnable) {
         return;
     }
-    if (cpuTemp >= globalConfig.shutdownConfig.shutdownTemp) {
+    if (cpuTemp > globalConfig.shutdownConfig.shutdownTemp) {
 #ifdef DEBUG
         printf("Shutdown\n");
 #endif
