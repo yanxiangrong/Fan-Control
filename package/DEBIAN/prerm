@@ -1,0 +1,4 @@
+#!/bin/bash
+
+systemctl stop fan-control
+systemctl disable fan-control

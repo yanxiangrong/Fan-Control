@@ -10,9 +10,26 @@
 4. 可以设定温度过高重启或关机
 
 ## 安装
+安装之前你需要安装WiringPI动态库  
+香橙派
 ```shell
-wget https://github.com/yanxiangrong/Fan-Control/releases/download/1.1/fanControl_1.1-1_all.deb -O fanControl_1.1-1_all.deb
-sudo dpkg -i fanControl_1.1-1_all.deb
+git clone https://github.com/orangepi-xunlong/wiringOP.git
+cd wiringOP
+./build clean
+./build 
+```
+
+树莓派
+```shell
+git clone https://github.com/WiringPi/WiringPi.git
+cd WiringPi
+./build 
+```
+
+安装本程序
+```shell
+wget https://github.com/yanxiangrong/Fan-Control/releases/download/1.1-3/fanControl_1.1-3_all.deb -O fanControl_1.1-3_all.deb
+sudo dpkg -i fanControl_1.1-3_all.deb
 ```
 安装后会创建一个名为 `fan-control.service` 的服务。并且设置为开机自启。  
 安装完成后程序立即在后台运行，可以使用 `systemctl status fan-control` 查看状态  
@@ -102,8 +119,8 @@ PWM控制功能需要系统支持硬PWM，若要使用软PWM，请看 高级配�
 取消注释宏定义`#define DEBUG`可以打开调试模式。  
 在调试模式下，程序会打印每次检测的CPU温度，并且打印操作日志。
 
-`rudeconfig`库用来读取和解析配置文件。使用前需要编译安装，详情请参考 [lib/rudeconfig-5.0.5/INSTALL](./lib/rudeconfig-5.0.5/INSTALL)  
-`wiringOP`是香橙派GPIO库文件。使用前需要编译安装，详情请参考 [lib/wiringOP/INSTALL](./lib/wiringOP/INSTALL)
+`rudeconfig`库用来读取和解析配置文件。使用前需要编译安装，详情请参考 [lib/rudeconfig-5.0.5/INSTALL](third_party/rudeconfig-5.0.5/INSTALL)  
+`wiringOP`是香橙派GPIO库文件。使用前需要编译安装，详情请参考 [lib/wiringOP/INSTALL](third_party/wiringOP/INSTALL)
 
 ### 一些有用的命令
 
@@ -133,8 +150,9 @@ systemctl disable fan-control
 ```shell
 chmod 755 package/usr/bin/fanControl
 chmod 755 package/DEBIAN/postinst
+chmod 755 package/DEBIAN/prerm
 chmod 755 package/DEBIAN/postrm
-dpkg -b package fanControl_1.1-2_all.deb
+dpkg -b package fanControl_1.1-3_all.deb
 ```
 压力测试
 ```shell

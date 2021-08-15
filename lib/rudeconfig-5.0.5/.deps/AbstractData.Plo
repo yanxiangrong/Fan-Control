@@ -1,6 +1,0 @@
-AbstractData.lo: src/AbstractData.cpp /usr/include/stdc-predef.h \
- src/AbstractData.h
-
-/usr/include/stdc-predef.h:
-
-src/AbstractData.h:

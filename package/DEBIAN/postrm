@@ -1,2 +1,1 @@
-systemctl stop fan-control.service
-systemctl disable fan-control.service
+#!/bin/bash
