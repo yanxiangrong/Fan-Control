@@ -115,6 +115,7 @@ void singHandler(int sig) {
 void registerSingHandler() {
     signal(SIGINT, singHandler);
     signal(SIGKILL, singHandler);
+    signal(SIGTERM, singHandler);
 }
 
 void loadConfig() {
@@ -350,5 +351,7 @@ int main() {
 
         sleep(globalConfig.commonConfig.detectionInterval);
     }
+    fanController(globalConfig.fanConfig.fanOnTemp + 1);
+    pwmFanController(globalConfig.pwmFanConfig.fanOnTemp + 1);
     return 0;
 }

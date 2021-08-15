@@ -11,8 +11,8 @@
 
 ## 安装
 ```shell
-wget https://github.com/yanxiangrong/Fan-Control/releases/download/1.0/fanControl_1.0-2_all.deb -o fanControl_1.0-2_all.deb
-sudo dpkg -i fanControl_1.0-2_all.deb
+wget https://github.com/yanxiangrong/Fan-Control/releases/download/1.1/fanControl_1.1-1_all.deb -o fanControl_1.1-1_all.deb
+sudo dpkg -i fanControl_1.1-1_all.deb
 ```
 安装后会创建一个名为 `fan-control.service` 的服务。并且设置为开机自启。  
 安装完成后程序立即在后台运行，可以使用 `systemctl status fan-control` 查看状态  
@@ -134,7 +134,7 @@ systemctl disable fan-control
 chmod 755 package/usr/bin/fanControl
 chmod 755 package/DEBIAN/postinst
 chmod 755 package/DEBIAN/postrm
-dpkg -b package fanControl_1.0-2_all.deb
+dpkg -b package fanControl_1.1-2_all.deb
 ```
 压力测试
 ```shell
